@@ -1,3 +1,8 @@
+import { CHAT_API_URL } from "./chatbot-api.js";
+
+// === 세션 ID (페이지 로드시 1번 생성) ===
+const sessionId = crypto.randomUUID();
+
 // === 요소 선택 ===
 const chatBox = document.getElementById("chat");
 const msgInput = document.getElementById("user-input");
@@ -114,10 +119,14 @@ async function sendMessage() {
     showSpinner(); // 🌀 스피너 표시
 
     try {
-      const res = await fetch("http://192.168.100.69:5000/chat", {
+      const res = await fetch(CHAT_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userText, turn }),
+        body: JSON.stringify({
+          sessionId: sessionId,
+          text: userText,
+          mode: "chat"
+        }),
       });
 
       const data = await res.json();
@@ -157,12 +166,13 @@ async function sendMessage() {
     showSpinner(); // 🌀 스피너 표시
 
     try {
-      const res = await fetch("http://192.168.100.69:5000/chat", {
+      const res = await fetch(CHAT_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          message: userText,
-          turn: "after_recommend",
+          sessionId: sessionId,
+          text: userText,
+          mode: "chat"
         }),
       });
 

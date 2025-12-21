@@ -582,7 +582,7 @@ if (searchBtnResults && searchInputResults) {
 /* 📊 감정 통계 + 챗봇 아이콘 자동 변경 */
 async function loadEmotionStats() {
   try {
-    const response = await fetch("http://192.168.100.69:5000/stats");
+    // const response = await fetch("http://192.168.100.69:5000/stats");
     const data = await response.json();
 
     const topEmotionEl = document.getElementById("top-emotion");
@@ -642,7 +642,7 @@ async function loadEmotionStats() {
 }
 
 // ✅ 페이지 로드시 실행
-document.addEventListener("DOMContentLoaded", loadEmotionStats);
+// document.addEventListener("DOMContentLoaded", loadEmotionStats);
 
 
 /* ============================================================
@@ -650,7 +650,7 @@ document.addEventListener("DOMContentLoaded", loadEmotionStats);
 ============================================================ */
 async function loadTop10Movies() {
   try {
-    const response = await fetch("http://192.168.100.69:5000/top10");
+    // const response = await fetch("http://192.168.100.69:5000/top10");
     const data = await response.json();
 
     if (!data || data.length === 0) {
@@ -731,8 +731,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     searchInput.value = q;
     await runSearch(q);
   } else {
-    await loadEmotionStats();
-    await loadTop10Movies();
+    // await loadEmotionStats();
+    // await loadTop10Movies();
     await loadMoviesByGenre("35");
     showView("home");
   }
