@@ -1,6 +1,7 @@
 {
   "routes": [
     { "src": "/", "dest": "/html/index.html" },
-    { "src": "/chatbot", "dest": "/html/chatbot.html" }
+    { "src": "/html/(.*)", "dest": "/html/$1" },
+    { "src": "/(css|js|assets)/(.*)", "dest": "/$1/$2" }
   ]
 }
