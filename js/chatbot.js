@@ -124,8 +124,7 @@ async function sendMessage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           sessionId: sessionId,
-          text: userText,
-          mode: "chat"
+          text: userText
         }),
       });
 

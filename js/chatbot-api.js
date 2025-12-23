@@ -2,4 +2,4 @@
 export const BACKEND_BASE_URL = "http://localhost:8080";
 
 // 챗봇 API
-export const CHAT_API_URL = `${BACKEND_BASE_URL}/api/chat`;
+export const CHAT_API_URL = "http://localhost:8080/chat";
