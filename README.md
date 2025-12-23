@@ -1,5 +1,5 @@
 배포주소
-moodymovie-frontend.vercel.app
+https://moodymovie-frontend.vercel.app
 
 
 # 감정 기반 영화 추천 시스템
