@@ -3,7 +3,7 @@
 ============================================================ */
 const apiKey = "8cde0962eca9041f7345e9c7ab7a4b7f";
 const IMAGE_BASE = "https://image.tmdb.org/t/p/w500";
-const DEFAULT_POSTER = "../assets/img/no-poster.png";
+const DEFAULT_POSTER = "/assets/img/no-poster.png";
 
 /* ============================================================
  🧱 2. 주요 DOM 요소
@@ -362,7 +362,7 @@ function renderGrid(movies) {
 
 function setGridChatbotIcon() {
   const gridIcon = document.getElementById("grid-emotion-icon");
-  gridIcon.src = "../assets/img/grid-chatbot.png";
+  gridIcon.src = "/assets/img/grid-chatbot.png";
 }
 
 // === TOP 버튼 기능 ===
@@ -590,7 +590,7 @@ async function loadEmotionStats() {
 
     if (!data || data.length === 0) {
       topEmotionEl.innerText = "데이터가 아직 없어요 😢";
-      iconEl.src = "../assets/img/chatbot-logo.png";
+      iconEl.src = "/assets/img/chatbot-logo.png";
       return;
     }
 
@@ -618,7 +618,7 @@ async function loadEmotionStats() {
 
       // 이미지 교체
       const gifName = emotionMap[emotion] || "chatbot-logo.png";
-      iconEl.src = `../assets/img/${gifName}`;
+      iconEl.src = `/assets/img/${gifName}`;
 
       // 부드러운 전환 (opacity)
       topEmotionEl.style.opacity = 0;
